@@ -1,0 +1,106 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.greyText {
+  color: #bebebe;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.greyLine {
+  height: 9px;
+  width: 1px;
+  position: absolute;
+  top: 8px;
+  left: 39px;
+  background-color: #bebebe
+}
+
+.block {
+  display: block
+}
+
+.commentAreaText {
+  background-color: #edefef;
+  border: none;
+  width: 800px;
+  height: 50px;
+  border-radius: 6px;
+  outline: 0
+}
+
+.icon {
+  display: inline-block;
+  background-color: red;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  vertical-align: middle
+}
+
+.commentBtn {
+  height: 50px;
+  width: 70px;
+  background-color: #81daf5;
+  border-radius: 6px;
+  vertical-align: middle;
+  border: 0;
+  color: white;
+  cursor: pointer
+}
+
+.commentBtn:hover {
+  background-color: #23aaf2;
+}
+
+.commentHistory {
+  padding: 10px 10px 10px 60px;
+}
+
+.comment {
+  padding: 5px;
+}
+
+.lineBreak {
+  height: 1px;
+  width: 1000px;
+  border-top: 1px #edefef solid;
+  margin-top: 8px;
+}
