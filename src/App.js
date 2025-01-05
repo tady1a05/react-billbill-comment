@@ -1,26 +1,25 @@
 import './App.css';
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 
 function App() {
-  let text;
-
   const [comments, setComments] = useState([]);
+  const [inputVal, setInputVal] = useState('');
+  const inputRef = useRef(null);
 
   const postComment = () => {
     let tempComments = [...comments];
 
     tempComments.unshift({
       id: crypto.randomUUID(),
-      content: text,
+      content: inputVal,
       liked: Math.floor(Math.random() * 100),
       createdDate: new Date()
     })
 
     setComments(tempComments);
-  }
-
-  const updateText = (e) => {
-    text = e.target.value;
+    setInputVal('');
+    inputRef.current.focus();
+    console.dir(inputRef.current);
   }
 
   const deleteComment = (id) => {
@@ -61,7 +60,7 @@ function App() {
       <comment-body className={'block'} style={{ padding: '10px' }}>
         <comment-area className={'block'}>
           <icon className={'icon'}></icon>
-          <input className={'commentAreaText'} style={{ marginLeft: '10px', marginRight: '10px', paddingLeft: '10px' }} placeholder="Write a comment" onChange={(e) => updateText(e)} />
+          <input className={'commentAreaText'} style={{ marginLeft: '10px', marginRight: '10px', paddingLeft: '10px' }} placeholder="Write a comment" value={inputVal} ref={inputRef} onChange={(e) => setInputVal(e.target.value)} />
           <button className={'commentBtn'} onClick={() => postComment()}>POST</button>
         </comment-area>
         {comments.map(comment =>
